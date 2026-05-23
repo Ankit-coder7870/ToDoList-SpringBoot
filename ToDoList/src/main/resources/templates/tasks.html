@@ -7,11 +7,20 @@
 <body>
 	<h1>ToDo Application</h1>
 	<div>
-	<th:block th:each="task : ${tasks}">
-	 <div>
-	 <span th:text="${task.title}">Task Title</span>
-	 </div>
-	</th:block>
+		<form action="/" method="post">
+		<div>
+				<input type="text" name="title" placeholder="Add a New Task"
+					required="required">
+			</div>
+			<div>
+				<button type="submit">Add</button>
+			</div>
+		</form>
+		<th:block th:each="task : ${tasks}">
+			<div>
+				<span th:text="${task.title}">Task Title</span>
+			</div>
+		</th:block>
 	</div>
 </body>
 </html>
